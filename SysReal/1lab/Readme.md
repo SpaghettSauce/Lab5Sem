@@ -33,12 +33,11 @@ void Func(string name)
 
 int main()
 {
-    std::thread thread1(Func, "t1");
-    std::thread thread2(Func, "t2");
-    thread1.join();
-    thread2.join();
-
-    system("pause");
+   std::thread thread1(Func, "t1");
+   std::thread thread2(Func, "t2");
+   thread1.join();
+   thread2.join();
+   system("pause");
 }
 где Func функция, вычисления факториала.
 

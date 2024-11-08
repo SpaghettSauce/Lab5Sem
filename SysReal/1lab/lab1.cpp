@@ -18,7 +18,7 @@ int main(){
     s *= i;
     }
 
-    //cout<<s;
+    cout<<s;
     
     //2
     for (int j = 0; j < 10000000; j++){

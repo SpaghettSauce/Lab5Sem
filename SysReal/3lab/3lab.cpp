@@ -11,12 +11,10 @@ int main()
     char x = _getch(); 
     std::cout << "Start - " << x << std::endl;
 
-    std::string message = "the program is still alive!";
+    std::string message = "Живем";
     
-    while (true) 
+    while (_kbhit) 
     {
-        if (_kbhit()) //буфер не пустой?
-        {
             char key = _getch(); 
             if (key == 'j') 
             {
@@ -28,7 +26,7 @@ int main()
                 message = "KEY: ";
                 message += key; 
             }
-        }
+        //}
 
         end = clock();
         if ((double)(end - start) / CLOCKS_PER_SEC >= 1) // Проверка ли секунда ?

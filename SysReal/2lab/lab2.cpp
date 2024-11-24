@@ -5,21 +5,20 @@
 #include <string>
 #include <cmath>
 
-std::mutex m; 
+//std::mutex m; 
 
 void Func(std::string name) {
     long double i = 0.0;
     auto start_time = std::chrono::high_resolution_clock::now();
     auto end_time = start_time + std::chrono::seconds(1);
-
-    while (std::chrono::high_resolution_clock::now() < end_time) {
+    while (std::chrono::high_resolution_clock::now() < end_time) { //пока время не вышло
         i += pow(10,-9); 
     }
 
   
-    m.lock();
+   // m.lock();
     std::cout << name << ": " << i << std::endl;
-    m.unlock();
+   // m.unlock();
 }
 
 int main() {

@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-//std::mutex m; 
+std::mutex m; 
 
 void Func(std::string name) {
     long double i = 0.0;
@@ -16,9 +16,9 @@ void Func(std::string name) {
     }
 
   
-   // m.lock();
+    m.lock();
     std::cout << name << ": " << i << std::endl;
-   // m.unlock();
+    m.unlock();
 }
 
 int main() {

@@ -115,7 +115,7 @@ Vector zeidel(Matrix A, Vector b, Vector x) {
     }
 
     int iterations = 0;
-    double maxInaccuracy = -10;
+    double maxInaccuracy = 0.00;
 
     for (int iter = 0; iter < MAX_ITERATIONS; ++iter) {
         Vector x_new = x;

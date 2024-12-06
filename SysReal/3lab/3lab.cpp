@@ -7,32 +7,31 @@ int main()
 {
     clock_t start, end;
     start = clock();
-    std::cout << "Press any key to start\n";
-    char x = _getch(); 
-    std::cout << "Start - " << x << std::endl;
+    std::string message = "Живём";
 
-    std::string message = "Живем";
-    
-    while (_kbhit) 
+    while (true)
     {
-            char key = _getch(); 
-            if (key == 'j') 
+        end = clock();
+        if ((double)(end - start) / CLOCKS_PER_SEC >= 1) 
+        {
+            std::cout << message << std::endl;
+            start = clock(); 
+        }
+
+        if (_kbhit()) 
+        {
+            char input = _getch(); 
+
+            if (input == 'q') 
             {
-                std::cout << "Exiting \n";
+                std::cout << "Exiting program...\n";
                 break;
             }
             else
             {
-                message = "KEY: ";
-                message += key; 
+                message =  input; 
+                std::cout << "Key: " << message << std::endl;
             }
-        //}
-
-        end = clock();
-        if ((double)(end - start) / CLOCKS_PER_SEC >= 1) // Проверка ли секунда ?
-        {
-            std::cout << message << std::endl;
-            start = clock(); 
         }
     }
 

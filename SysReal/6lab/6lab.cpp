@@ -131,7 +131,6 @@ public:
                     plate3_consumed = 0;
                     return;
                 }
-                std::this_thread::yield();
             }
         }
     }
